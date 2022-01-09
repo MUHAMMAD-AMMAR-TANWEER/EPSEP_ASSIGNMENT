@@ -14,6 +14,9 @@ function SendData() {
     const [phase1_voltage_angle, setphase1_voltage_angle] = useState(0);
     const [phase2_voltage_angle, setphase2_voltage_angle] = useState(0);
     const [phase3_voltage_angle, setphase3_voltage_angle] = useState(0);
+    const [zero_seq, setzero_seq] = useState(0);
+    const [positive_seq, setpositive_seq] = useState(0);
+    const [negative_seq, setnegative_seq] = useState(0);
     const [Fault_type, setFault_type] = useState(0);
 
 
@@ -34,7 +37,11 @@ function SendData() {
       phase1_voltage_angle: Number(phase1_voltage_angle),
       phase2_voltage_angle: Number(phase2_voltage_angle),
       phase3_voltage_angle: Number(phase3_voltage_angle),
-      Fault_type: String(Fault_type)
+      zero_seq:Number(zero_seq),
+      positive_seq:Number(positive_seq),
+      negative_seq:Number(negative_seq),
+      Fault_type: String(Fault_type),
+      
       
 
 

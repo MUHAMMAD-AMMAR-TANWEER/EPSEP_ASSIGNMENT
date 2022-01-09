@@ -30,8 +30,8 @@ FirebaseConfig config;
 
 unsigned long sendDataPrevMillis = 0;
 int i1m, i2m, i3m, i1p, i2p, i3p, v1m, v2m, v3m, v1p, v2p, v3p;
-float floatValue;
-string fault;
+float floatValue, zero_seq, postive_seq, negative_seq;
+String fault;
 
 bool signupOK = false;
 
@@ -243,7 +243,45 @@ void loop()
 
     //After apply particular conditions on variables which we got, now its time to post to react app via firebase
 
-    if (Firebase.RTDB.setString(&fbdo, "test/Input/Fault_type", "LINE_TO_LINE_FAULT"))
+    fault = "LINE_TO_LINE"; //this varible will contain string fault
+    zero_seq = 0;           //place zero seq
+    postive_seq = 0;
+    negative_seq = 0;
+
+    if (Firebase.RTDB.setString(&fbdo, "test/Input/Fault_type", fault))
+    {
+      Serial.println("PASSED");
+      Serial.println("PATH: " + fbdo.dataPath());
+      Serial.println("TYPE: " + fbdo.dataType());
+    }
+    else
+    {
+      Serial.println("FAILED");
+      Serial.println("REASON: " + fbdo.errorReason());
+    }
+    if (Firebase.RTDB.setfloat(&fbdo, "test/Input/zero_seq", zero_seq))
+    {
+      Serial.println("PASSED");
+      Serial.println("PATH: " + fbdo.dataPath());
+      Serial.println("TYPE: " + fbdo.dataType());
+    }
+    else
+    {
+      Serial.println("FAILED");
+      Serial.println("REASON: " + fbdo.errorReason());
+    }
+    if (Firebase.RTDB.setfloat(&fbdo, "test/Input/positive_seq", postive_seq))
+    {
+      Serial.println("PASSED");
+      Serial.println("PATH: " + fbdo.dataPath());
+      Serial.println("TYPE: " + fbdo.dataType());
+    }
+    else
+    {
+      Serial.println("FAILED");
+      Serial.println("REASON: " + fbdo.errorReason());
+    }
+    if (Firebase.RTDB.setfloat(&fbdo, "test/Input/negative_seq", negative_seq))
     {
       Serial.println("PASSED");
       Serial.println("PATH: " + fbdo.dataPath());

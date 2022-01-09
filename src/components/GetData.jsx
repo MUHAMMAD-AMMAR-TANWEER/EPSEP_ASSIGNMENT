@@ -41,8 +41,10 @@ function GetData() {
                             <>
                         {getList.length > 0 && (
                             <div>
-                            <h3>float: {getList[0].float}</h3>
-                            <h3>Int: {getList[0].int}</h3> 
+                            <h3>zero_seq: {getList[0].zero_seq}</h3>
+                            <h3>positive_seq: {getList[0].zero_seq}</h3>
+                            <h3>negative_seq: {getList[0].zero_seq}</h3>
+                            <h3>Fault_type: {getList[0].Fault_type}</h3> 
                         </div>
                         )}
                         </> 
