@@ -2,15 +2,28 @@ import './App.css';
 import GetData from './components/GetData';
 import SendData from './components/SendData';
 import {getList} from './components/GetData';
+import ai from './ai.png';
 
 function App() {
   return (
+
     <div className="App">
-      <h1>DATA FOR EPSP</h1>
-      <h2>Sending Data to Firebase</h2>
+    <div className="gradient__bg">
+      
       <SendData/>
-      <h2>Getting Data from Firebase</h2>
+
       <GetData/>
+
+    <div className="gpt3__header-image">
+      <img src={ai} />
+    </div>
+      
+    </div>
+
+
+
+
+
     </div>
   );
 }

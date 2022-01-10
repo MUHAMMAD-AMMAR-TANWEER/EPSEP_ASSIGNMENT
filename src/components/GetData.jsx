@@ -40,7 +40,8 @@ function GetData() {
                      {getList .map((data, index)=>(
                             <>
                         {getList.length > 0 && (
-                            <div>
+                            <div className="gpt3__header-content">
+                            <h2>Getting Data from Firebase</h2>
                             <h3>zero_seq: {getList[0].zero_seq}</h3>
                             <h3>positive_seq: {getList[0].zero_seq}</h3>
                             <h3>negative_seq: {getList[0].zero_seq}</h3>

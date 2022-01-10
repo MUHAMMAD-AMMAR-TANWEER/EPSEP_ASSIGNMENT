@@ -1,5 +1,6 @@
 import { useState } from "react";
 import firebase from "../firebase";
+import "./SendData.css"
 
 function SendData() {
     const [phase1_current, setphase1_current] = useState(0);
@@ -51,36 +52,46 @@ function SendData() {
     sendDataRef.set(data);
   };
     return (
-        <div>
-            <h6>Enter Phase1 current Magnitude  </h6>
+        <div className="gpt3__header section__padding">
+          {/* <div className="gpt3__header-content"> */}
+          <div className="gpt3__header-content">
+            <h1>DATA FOR EPSP</h1>
+
+            <h2>Sending Data to Firebase</h2>
+          
+            <h3>Enter Phase1 current Magnitude  </h3>
             <input type="number" value={phase1_current} onChange={(e)=>setphase1_current(e.target.value)} placeholder="Enter Int Value" />
 
-            <h6>Enter Phase2 current Magnitude </h6>
+            <h3>Enter Phase2 current Magnitude </h3>
             <input type="number" value={phase2_current} onChange={(e)=>setphase2_current(e.target.value)} placeholder="Enter Float Value"/>
-            <h6>Enter Phase3 current Magnitude  </h6>
+            <h3>Enter Phase3 current Magnitude  </h3>
             <input type="number" value={phase3_current} onChange={(e)=>setphase3_current(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase1 current Angle </h6>
+            <h3>Enter Phase1 current Angle </h3>
             <input type="number" value={phase1_current_angle} onChange={(e)=>setphase1_current_angle(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase2 current Angle  </h6>
+            <h3>Enter Phase2 current Angle  </h3>
             <input type="number" value={phase2_current_angle} onChange={(e)=>setphase2_current_angle(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase3 current Angle </h6>
+            
+            <h3>Enter Phase3 current Angle </h3>
             <input type="number" value={phase3_current_angle} onChange={(e)=>setphase3_current_angle(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase1 voltage Magnitude  </h6>
+            <h3>Enter Phase1 voltage Magnitude  </h3>
             <input type="number" value={phase1_voltage} onChange={(e)=>setphase1_voltage(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase2 voltage Magnitude  </h6>
+            <h3>Enter Phase2 voltage Magnitude  </h3>
             <input type="number" value={phase2_voltage} onChange={(e)=>setphase2_voltage(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase3 voltage Magnitude  </h6>
+            <h3>Enter Phase3 voltage Magnitude  </h3>
             <input type="number" value={phase3_voltage} onChange={(e)=>setphase3_voltage(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase1 voltage Angle  </h6>
+            <h3>Enter Phase1 voltage Angle  </h3>
             <input type="number" value={phase1_voltage_angle} onChange={(e)=>setphase1_voltage_angle(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase2 Voltage Angle  </h6>
+            <h3>Enter Phase2 Voltage Angle  </h3>
             <input type="number" value={phase2_voltage_angle} onChange={(e)=>setphase2_voltage_angle(e.target.value)} placeholder="Enter Int Value" />
-            <h6>Enter Phase3 Voltage Angle  </h6>
+            <h3>Enter Phase3 Voltage Angle  </h3>
             <input type="number" value={phase3_voltage_angle} onChange={(e)=>setphase3_voltage_angle(e.target.value)} placeholder="Enter Int Value" />
-
+            <div className="gpt3__header-content__input">
             
             <button onClick={sendData}>Send Data</button>
-        </div>
+            </div>
+          </div>
+         </div>
+      
     )
 }
 
