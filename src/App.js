@@ -1,29 +1,21 @@
-import './App.css';
-import GetData from './components/GetData';
-import SendData from './components/SendData';
-import {getList} from './components/GetData';
-import ai from './ai.png';
+import "./App.css";
+import GetData from "./components/GetData";
+import SendData from "./components/SendData";
+import { getList } from "./components/GetData";
+import ai from "./ai.png";
 
 function App() {
   return (
-
     <div className="App">
-    <div className="gradient__bg">
-      
-      <SendData/>
+      <div className="gradient__bg">
+        <SendData />
 
-      <GetData/>
+        <GetData />
 
-    <div className="gpt3__header-image">
-      <img src={ai} />
-    </div>
-      
-    </div>
-
-
-
-
-
+        <div className="gpt3__header-image">
+          <img src={ai} />
+        </div>
+      </div>
     </div>
   );
 }
